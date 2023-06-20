@@ -1,0 +1,79 @@
+@media (max-width: 1900px) {
+    #cave-emporium-image {
+        display: none;
+    }
+}
+
+#body {
+    background-color: #334059;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-image: url('FruitCo_background.png');
+    background-position: center;
+}
+
+h1{
+    font-weight: 1000;
+    color: lightblue;
+}
+
+h2{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.item-display-container{
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    background-color: white;
+    padding: 30px;
+    border: round;
+    box-shadow: inset;
+    border-radius: 20px;
+}
+
+.cart-table{
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.payment-table{
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    color: black;
+}
+
+#cave-emporium-image{
+    position: fixed;
+    right: 0px;
+    top: 150px;
+    height: 600px;
+    width: auto;
+}
+
+.index-form{
+    font-family: 'Franklin Gothic Medium';
+}
+
+#logo{
+    height: 50px;
+    width: auto;
+}
+
+.logo{
+    height: 100px;
+    width: auto;
+}
+
+.credentials-container{
+    background-color: #334059;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.info{
+    font-family: 'Franklin Gothic Medium';
+    font-weight: 1000;
+    font-size: larger;
+}

@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br/>
+<h1>Add Item to Database (Admin Only)</h1>
+<br/>
+<div class="credentials-container">
+    <form method="POST">      
+        {{ form.hidden_tag() }}
+
+        {{ form.item.label(class="form-label") }}
+
+        {{ form.item(class="form-control") }}
+
+        <br/>
+
+        {{ form.hidden_tag() }}
+
+        {{ form.price_pw.label(class="form-label") }}
+
+        {{ form.price_pw(class="form-control") }}
+
+        <br/>
+
+        {{ form.hidden_tag() }}
+
+        {{ form.price_pi.label(class="form-label") }}
+
+        {{ form.price_pi(class="form-control") }}
+
+        <br/>
+
+        {{ form.hidden_tag() }}
+
+        {{ form.short_desc.label(class="form-label") }}
+
+        {{ form.short_desc(class="form-control") }}
+
+        <br/>
+
+        {{ form.hidden_tag() }}
+
+        {{ form.long_desc.label(class="form-label") }}
+
+        {{ form.long_desc(class="form-control") }}
+
+        <br/>
+
+        {{ form.hidden_tag() }}
+
+        {{ form.environmental.label(class="form-label") }}
+
+        {{ form.environmental(class="form-control") }}
+
+        <br/>
+
+        {{ form.hidden_tag() }}
+
+        {{ form.filename.label(class="form-label") }}
+
+        {{ form.filename(class="form-control") }}
+
+        <br/>
+
+        {{ form.submit(class="btn btn-secondary") }}
+    </form>  
+</div>
+{% endblock %}

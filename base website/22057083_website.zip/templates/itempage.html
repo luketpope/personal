@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br/>
+<div class="credentials-container">
+    <h2>{{ item.item }}</h2>
+    <hr>
+    <i>{{ item.short_desc }}</i>
+    <hr>
+    <img src="{{ url_for('static', filename=item.filename) }}" alt="{{ item.item }}", height="500px", width="auto">
+    <hr>
+    <p>{{ item.long_desc }}</p>
+    <hr>
+    <h3 id="{{ item.item }}" style="float: left;">£{{ item.price_pw }}<sub>/KG</sub></h3>
+    <br/><br/>
+    <form method="POST" action="/add_to_cart/{{item.id}}">
+      <input type="hidden" 
+        name="price" 
+        id="{{ item.short_desc }}" 
+        value="{{ item.price_pw }}">
+
+      <input type="hidden"
+        name="type"
+        id="{{ item.filename }}" 
+        value="|KG">
+
+    <div class="index-form">
+      <div class="info">
+        <input type="radio" 
+          name="{{ item.item }}" 
+          id="{{ item.item }}pw" 
+          value="{{ item.price_pw }}" 
+          onClick="perWeight('{{ item.item }}', '{{ item.price_pw }}', '{{ item.short_desc }}', '{{ item.filename }}')" checked="checked">
+        <label for="{{ item.item }}pw"><p>Price Per Weight</p></label>&emsp;
+        
+        <input type="radio" 
+          name="{{ item.item }}" 
+          id="{{ item.item }}pi" 
+          value="{{ item.price_pi }}" 
+          onClick="perItem('{{ item.item }}', '{{ item.price_pi }}', '{{ item.short_desc }}', '{{ item.filename }}')">
+        <label for="{{ item.item }}pi"><p>Price Per Item</p></label>
+        <br/>
+        <button type="submit" class="btn btn-info">Add to Cart</button>
+      </div>
+    </form>
+    <hr>
+    <a class="btn btn-danger" href="{{ url_for('index') }}">Back</a>
+    </div>
+    <hr>
+    <script>
+        function perWeight(id, item, hidden_id1, hidden_id2){
+          text = '£' + item + '<sub>/KG</sub>';
+          document.getElementById(id).innerHTML = text;
+          price(item, "|KG", hidden_id1, hidden_id2)
+        }
+        function perItem(id, item, hidden_id1, hidden_id2){
+          text = '£' + item + '<sub>/Item</sub>';
+          document.getElementById(id).innerHTML = text;
+          price(item, "|Item", hidden_id1, hidden_id2)
+        }
+        function price(price, type, hidden_id1, hidden_id2){
+          var price = Number(price);
+          document.getElementById(hidden_id1).value = price;
+          document.getElementById(hidden_id2).value = type;
+        }
+    </script>
+{% endblock %}

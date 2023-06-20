@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if payment %}
+  {% for message in get_flashed_messages() %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      {{ message }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  {% endfor %}
+  <center>
+  <h1>Payment was successful! Thank you for shopping at FruitCo!</h1>
+  <br/>
+  <a class="btn btn-info" href="{{ url_for('index')}}">Return to Home</a>
+  </center>
+  {% else %}
+    <br/>
+    <div class="credentials-container">
+      <h1>Your total is £{{ total }}</h1>
+      <p id="alertMessage">Please follow the form and enter your details to pay.</p>
+      <div class="payment-table">
+      <form method="POST">
+            {{ form.hidden_tag() }}
+
+            {{ form.cardnum.label(class="form-label") }}
+
+            {{ form.cardnum(class="form-control", placeholder="XXXX XXXX XXXX XXXX", onClick="numAlert()") }}
+
+            <br/>
+
+            {{ form.hidden_tag() }}
+
+            {{ form.cardname.label(class="form-label") }}
+
+            {{ form.cardname(class="form-control", placeholder="Your Name", onClick="nameAlert()") }}
+            
+            <br/>
+
+            {{ form.hidden_tag() }}
+
+            {{ form.CVV.label(class="form-label") }}
+
+            {{ form.CVV(class="form-control", placeholder="XXX", onClick="CVVAlert()") }}
+      </div>
+      <br/>
+            {{ form.submit(class="btn btn-info") }}
+      </form>
+    </div>
+{% endif %}
+<script>
+  function numAlert() {
+    let text;
+    text = "This is the 16-digit number found on the front of your card."
+    document.getElementById("alertMessage").innerHTML = text;
+  }
+  function nameAlert() {
+    let text;
+    text = "Please enter your name as it appears on your card."
+    document.getElementById("alertMessage").innerHTML = text;
+  }
+  function CVVAlert() {
+    let text;
+    text = "This is the 3-digit number found on the back of your card."
+    document.getElementById("alertMessage").innerHTML = text;
+  }
+</script>
+{% endblock %}

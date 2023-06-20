@@ -1,0 +1,31 @@
+Apple
+2.89
+0.48
+Shiny red or green fruit that keeps the doctor away.
+A fruit with smooth red or green skin, with a whitish inside. Very crunchy texture with a mild but sometimes sweet taste. Apples in the UK are typically imported from France, South Africa or Italy, meaning the environmental harm from importing can be quite drastic. They can be grown in the UK though.
+Medium
+apple.jpg
+
+Strawberries
+10.36
+2.30
+Seeded, red fruit. Why can’t you make a crumble with 3.14 strawberries? Because that would be a pi.
+A fruit with a seeded, red skin. Soft on the inside, with a very sweet taste. Strawberries are grown in the UK as well as imported from countries, like Spain or Egypt. Sold in boxes of 15.
+Low
+strawberries.jpg
+
+Banana
+1.00
+0.20
+Curved, yellow fruit. Very ap-peel-ing.
+A fruit with a smooth, yellow skin. Soft and often sweet to taste. Bananas are mostly imported from countries, like Costa Rica or Colombia. Our bananas come in a batch of 3.
+High
+banana.jpg
+
+Mango
+9.50
+2.37
+Smooth, yellow fruit. What do you say when you see a speedy fruit? Wow, look at that Mango.
+A fruit with a tough, inedible skin. Also containing an inedible pit at the center. Mangoes are juicy and taste fresh and sweet. Mangoes are mostly imported from other countries, like Ghana, Brazil or Pakistan.
+High
+mango.jpg
